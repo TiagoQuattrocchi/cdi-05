@@ -2,6 +2,7 @@
 #include "pico/stdlib.h"
 
 int main() {
+  stdio_init_all();
   for(int pin=0;pin<7;pin++){
     gpio_init(pin);
     gpio_set_dir(pin,true);
