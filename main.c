@@ -17,33 +17,31 @@ int main() {
   
   int boton =0;
   uint8_t digitos[]={
-    0x01,
-    0x4f,
-    0x12,
-    0x06,
-    0x4c,
-    0x24,
-    0x20,
-    0x0f,
-    0x00,
-    0x0c,
+    ~0x01,
+    ~0x4f,
+    ~0x12,
+    ~0x06,
+    ~0x4c,
+    ~0x24,
+    ~0x20,
+    ~0x0f,
+    ~0x00,
+    ~0x0c,
   };
-
-  stdio_init_all();
 
   while (true){
     if(gpio_get(10)==true) {
       boton=boton+1;
     }
-    if(gpio_get(11)==true){
+    else if(gpio_get(11)==true){
       boton=boton-1;
     }
-    if(gpio_get(12)==true){
+    else if(gpio_get(12)==true){
       boton=0;
     }
     for(int i=0;i<7;i++){
       bool val = digitos[boton] & (1<<i);
-      gpio_put(i,val);
+      gpio_put(i, (bool) val);
     }
     sleep_ms(500);
   }
