@@ -7,4 +7,4 @@ Curso: 4°2 avionica
 
 Materia: Control de Interfaces
 
-Colaboradores: Bautista Paz, 
+Colaboradores: Bautista Paz, Ramirez Santino
